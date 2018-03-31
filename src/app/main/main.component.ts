@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CoffeeHouseService} from '../coffee-house.service';
+import {CoffeeHouse} from '../coffee-house/coffeeHouse';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,13 @@ import {CoffeeHouseService} from '../coffee-house.service';
 export class MainComponent implements OnInit {
 
   addresses: string[];
+
+  @Input() coffeeHouse: CoffeeHouse = {
+      address: '',
+      space: 0.0,
+      rentalPrice: 0.0,
+      mobileNumber: ''
+    };
 
 constructor(
   private coffeeHouseService: CoffeeHouseService
@@ -23,4 +31,13 @@ constructor(
       .subscribe(addresses => this.addresses = addresses);
   }
 
+  create(): void {
+    this.coffeeHouseService.createCoffeeHouse(this.coffeeHouse)
+      .subscribe(() => this.coffeeHouse = {
+        address: '',
+        space: 0.0,
+        rentalPrice: 0.0,
+        mobileNumber: ''
+      });
+  }
 }
