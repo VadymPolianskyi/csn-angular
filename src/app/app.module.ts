@@ -8,13 +8,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {CoffeeHouseService} from './coffee-house.service';
 import { CoffeeHouseComponent } from './coffee-house/coffee-house.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CoffeeHouseComponent
+    CoffeeHouseComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

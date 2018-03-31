@@ -18,10 +18,18 @@ export class CoffeeHouseService {
 
 
   getCoffeeHouse(address: string): Observable<CoffeeHouse> {
-    const url = `${this.coffeeHouseURL}/Bratslavska%20104A`;
+    const url = `${this.coffeeHouseURL}/${address}`;
     return this.http.get<CoffeeHouse>(url).pipe(
       tap(_ => console.log(`fetched coffee house address=${address}`)),
       catchError(this.handleError<CoffeeHouse>(`getCoffeeHouse address=${address}`))
+    );
+  }
+
+  getAddresses(): Observable<string[]> {
+    const url = `${this.coffeeHouseURL}/addresses`;
+    return this.http.get<string[]>(url).pipe(
+      tap(_ => console.log(`fetched coffee house addresses`)),
+      catchError(this.handleError<string[]>(`getAddresses`))
     );
   }
 
