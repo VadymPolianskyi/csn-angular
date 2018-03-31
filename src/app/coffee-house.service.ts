@@ -33,6 +33,28 @@ export class CoffeeHouseService {
     );
   }
 
+  createCoffeeHouse (coffeeHouse: CoffeeHouse): Observable<any> {
+    coffeeHouse.space = parseFloat(String(coffeeHouse.space));
+    coffeeHouse.rentalPrice = parseFloat(String(coffeeHouse.rentalPrice));
+
+    const url = `${this.coffeeHouseURL}/create`;
+    return this.http.post(url, coffeeHouse, httpOptions).pipe(
+      tap(_ => console.log(`create coffee house address=${coffeeHouse.address}`)),
+      catchError(this.handleError<any>('createCoffeeHouse'))
+    );
+  }
+
+  updateCoffeeHouse (coffeeHouse: CoffeeHouse): Observable<any> {
+    coffeeHouse.space = parseFloat(String(coffeeHouse.space));
+    coffeeHouse.rentalPrice = parseFloat(String(coffeeHouse.rentalPrice));
+
+    const url = `${this.coffeeHouseURL}/${coffeeHouse.address}`;
+    return this.http.put(url, coffeeHouse, httpOptions).pipe(
+      tap(_ => console.log(`update coffee house address=${coffeeHouse.address}`)),
+      catchError(this.handleError<any>('updateCoffeeHouse'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);

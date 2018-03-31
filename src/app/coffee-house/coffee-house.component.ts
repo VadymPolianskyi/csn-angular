@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CoffeeHouseService} from '../coffee-house.service';
 import {ActivatedRoute} from '@angular/router';
 import {CoffeeHouse} from './coffeeHouse';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-coffee-house',
@@ -10,7 +11,7 @@ import {CoffeeHouse} from './coffeeHouse';
 })
 export class CoffeeHouseComponent implements OnInit {
 
-  coffeeHouse: CoffeeHouse;
+  @Input() coffeeHouse: CoffeeHouse;
 
   ngOnInit() {
     this.getCoffeeHouse();
@@ -18,7 +19,8 @@ export class CoffeeHouseComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private coffeeHouseService: CoffeeHouseService
+    private coffeeHouseService: CoffeeHouseService,
+    private location: Location
   ) {}
 
   getCoffeeHouse(): void {
@@ -27,7 +29,13 @@ export class CoffeeHouseComponent implements OnInit {
       .subscribe(coffeeHouse => this.coffeeHouse = coffeeHouse);
   }
 
+  goBack() {
+    this.location.back();
+  }
 
-
+  update(): void {
+    this.coffeeHouseService.updateCoffeeHouse(this.coffeeHouse)
+      .subscribe(() => this.goBack());
+  }
 
 }
