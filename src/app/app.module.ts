@@ -11,6 +11,7 @@ import { CoffeeHouseComponent } from './coffee-house/coffee-house.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
+import {CoffeeDrinkService} from './coffee-drink.service';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
     FormsModule
   ],
   providers: [
-    CoffeeHouseService
+    CoffeeHouseService,
+    CoffeeDrinkService
   ],
   bootstrap: [AppComponent]
 })

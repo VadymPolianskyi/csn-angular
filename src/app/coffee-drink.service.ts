@@ -11,13 +11,13 @@ export class CoffeeDrinkService {
 
   constructor(private http: HttpClient) { }
 
-  private coffeeDrinkURL = 'http://localhost:9000/coffe-drink';
+  private coffeeDrinkURL = 'http://localhost:9000/coffee-drinks';
 
-  getAllCoffeeDrinks(): Observable<CoffeeDrink> {
+  getAllCoffeeDrinks(): Observable<CoffeeDrink[]> {
     const url = `${this.coffeeDrinkURL}/all`;
     return this.http.get<CoffeeDrink[]>(url).pipe(
       tap(_ => console.log(`fetched all coffee drinks`)),
-      catchError(this.handleError<CoffeeDrink>(`getCoffeeDrinks`))
+      catchError(this.handleError<CoffeeDrink[]>(`getCoffeeDrinks`))
     );
   }
 
