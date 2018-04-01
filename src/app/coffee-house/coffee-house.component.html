@@ -1,0 +1,35 @@
+<div class="main-coffe-house">
+  <div *ngIf="coffeeHouse">
+    <h2>Coffee house info: </h2>
+    <div><span>Address: </span>{{ coffeeHouse.address }}</div>
+    <div><span>Space: </span>{{ coffeeHouse.space }}</div>
+    <div><span>Rental price: </span>{{ coffeeHouse.rentalPrice }}</div>
+    <div><span>MobileNumber: </span>{{ coffeeHouse.mobileNumber }}</div>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+
+  <div *ngIf="coffeeHouse">
+    <div id="create-ch-menu" class="main-component">
+      <h3>Update coffee house data: </h3>
+      <div>
+        <label>Address:
+          <input [(ngModel)]="coffeeHouse.address" placeholder="Address">
+        </label>
+        <label>Space:
+          <input [(ngModel)]="coffeeHouse.space" placeholder="Space">
+        </label>
+        <label>Rental price:
+          <input [(ngModel)]="coffeeHouse.rentalPrice" placeholder="Rental price">
+        </label>
+        <label>Mobile number:
+          <input [(ngModel)]="coffeeHouse.mobileNumber" placeholder="Mobile number">
+        </label>
+      </div>
+      <button (click)="update()">Update</button>
+    </div>
+  </div>
+
+</div>
+
+<app-coffee-drink></app-coffee-drink>
