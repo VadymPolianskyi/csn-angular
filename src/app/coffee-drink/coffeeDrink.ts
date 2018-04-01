@@ -1,4 +1,4 @@
-export class CoffeeHouse {
+export class CoffeeDrink {
   name: string;
   price: number;
   nativePrice: number;
