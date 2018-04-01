@@ -10,6 +10,7 @@ import {CoffeeHouseService} from './coffee-house.service';
 import { CoffeeHouseComponent } from './coffee-house/coffee-house.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
+import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     CoffeeHouseComponent,
-    MainComponent
+    MainComponent,
+    CoffeeDrinkComponent
   ],
   imports: [
     BrowserModule,
