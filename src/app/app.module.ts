@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
 import {CoffeeDrinkService} from './coffee-drink.service';
+import {NgSelectizeModule} from 'ng-selectize';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {CoffeeDrinkService} from './coffee-drink.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgSelectizeModule
   ],
   providers: [
     CoffeeHouseService,
