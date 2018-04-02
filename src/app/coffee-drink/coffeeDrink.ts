@@ -13,3 +13,8 @@ export class Product {
   description: string;
 
 }
+
+export class SelectObject {
+  label: string;
+  value: string;
+}

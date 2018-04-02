@@ -11,6 +11,8 @@ import { CoffeeHouseComponent } from './coffee-house/coffee-house.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule } from '@angular/forms';
 import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
+import {CoffeeDrinkService} from './coffee-drink.service';
+import {NgSelectizeModule} from 'ng-selectize';
 
 
 @NgModule({
@@ -25,10 +27,12 @@ import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgSelectizeModule
   ],
   providers: [
-    CoffeeHouseService
+    CoffeeHouseService,
+    CoffeeDrinkService
   ],
   bootstrap: [AppComponent]
 })

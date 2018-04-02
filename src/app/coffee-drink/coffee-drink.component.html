@@ -1,3 +1,19 @@
-<p>
-  coffee-drink works!
-</p>
+<div *ngIf="coffeeDrinks">
+
+  <a *ngFor="let coffeeDrink of coffeeDrinks" class="col-1-4"
+       routerLink="/coffee-house/{{ address }}">
+        <div class="module">
+          <h3>{{ coffeeDrink.name }}</h3>
+          <div><span>Price: </span>{{ coffeeDrink.price }}</div>
+          <div class="small-text"><span>Description: </span>{{ coffeeDrink.description }}</div>
+        </div>
+
+  </a>
+</div>
+
+
+<div class="example">
+
+
+  <ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>
+</div>
