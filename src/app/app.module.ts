@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CoffeeDrinkComponent } from './coffee-drink/coffee-drink.component';
 import {CoffeeDrinkService} from './coffee-drink.service';
 import {NgSelectizeModule} from 'ng-selectize';
+import { SalesComponent } from './sales/sales.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {NgSelectizeModule} from 'ng-selectize';
     HeaderComponent,
     CoffeeHouseComponent,
     MainComponent,
-    CoffeeDrinkComponent
+    CoffeeDrinkComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
