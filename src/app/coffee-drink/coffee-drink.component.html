@@ -1,7 +1,6 @@
 <div *ngIf="coffeeDrinks">
 
-  <a *ngFor="let coffeeDrink of coffeeDrinks" class="col-1-4"
-       routerLink="/coffee-house/{{ address }}">
+  <a *ngFor="let coffeeDrink of coffeeDrinks" class="col-1-4" (click)="setDrink(coffeeDrink)">
         <div class="module">
           <h3>{{ coffeeDrink.name }}</h3>
           <div><span>Price: </span>{{ coffeeDrink.price }}</div>
@@ -12,8 +11,54 @@
 </div>
 
 
+<div>
+  <div id="create-cd-menu" class="main-component">
+    <h3>Create new coffee drink: </h3>
+    <div>
+      <label>Name:
+        <input [(ngModel)]="newCoffeeDrink.name" placeholder="Name">
+      </label>
+      <label>Price:
+        <input [(ngModel)]="newCoffeeDrink.price" placeholder="Price">
+      </label>
+      <label>Native price:
+        <input [(ngModel)]="newCoffeeDrink.nativePrice" placeholder="Native price">
+      </label>
+      <label>Products:
+        <ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>
+      </label>
+      <label>Description:
+        <input [(ngModel)]="newCoffeeDrink.description" placeholder="Description">
+      </label>
+    </div>
+    <button (click)="create()">Create</button>
+  </div>
+</div>
+
+
 <div class="example">
 
 
-  <ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>
+  <!--<ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>-->
+
+  <div *ngIf="coffeeDrink">
+    <div id="create-ch-menu" class="main-component">
+      <h3>Update coffee drink data: </h3>
+      <div>
+        <label>Address:
+          <input [(ngModel)]="coffeeDrink.name" placeholder="Address">
+        </label>
+        <label>Space:
+          <input [(ngModel)]="coffeeDrink.price" placeholder="Space">
+        </label>
+        <label>Rental price:
+          <input [(ngModel)]="coffeeDrink.nativePrice" placeholder="Rental price">
+        </label>
+        <label>Mobile number:
+          <input [(ngModel)]="coffeeDrink.description" placeholder="Mobile number">
+        </label>
+      </div>
+      <button (click)="update()">Update</button>
+    </div>
+  </div>
 </div>

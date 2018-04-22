@@ -1,34 +1,15 @@
-<div class="main">
-  <div id="coffee-houses-list" class="main-component">
-    <h2>Coffee Houses: </h2>
-    <div *ngIf="addresses">
-      <div class="grid grid-pad">
-        <a *ngFor="let address of addresses" class="col-1-4"
-           routerLink="/coffee-house/{{ address }}">
-          <div class="module address">
-            <h4>{{ address }}</h4>
-          </div>
-        </a>
-      </div>
+<div >
+  <a class="col-1-4"
+     routerLink="/coffee-houses">
+    <div class="module address">
+      <h4>Coffee houses</h4>
     </div>
-  </div>
+  </a>
 
-  <div id="create-ch-menu" class="main-component">
-    <h3>Create new coffee house: </h3>
-    <div>
-      <label>Address:
-        <input [(ngModel)]="coffeeHouse.address" placeholder="Address">
-      </label>
-     <label>Space:
-        <input [(ngModel)]="coffeeHouse.space" placeholder="Space">
-      </label>
-     <label>Rental price:
-        <input [(ngModel)]="coffeeHouse.rentalPrice" placeholder="Rental price">
-      </label>
-     <label>Mobile number:
-        <input [(ngModel)]="coffeeHouse.mobileNumber" placeholder="Mobile number">
-      </label>
+  <a class="col-1-4"
+     routerLink="/coffee-drinks">
+    <div class="module address">
+      <h4>Coffee drinks</h4>
     </div>
-    <button (click)="create()">Create</button>
-  </div>
+  </a>
 </div>

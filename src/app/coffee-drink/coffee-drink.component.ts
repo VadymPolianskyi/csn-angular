@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CoffeeDrink, Product, SelectObject} from './coffeeDrink';
 import {CoffeeDrinkService} from '../coffee-drink.service';
+import {CoffeeHouse} from '../coffee-house/coffeeHouse';
 
 @Component({
   selector: 'app-coffee-drink',
@@ -10,6 +11,9 @@ import {CoffeeDrinkService} from '../coffee-drink.service';
 export class CoffeeDrinkComponent implements OnInit {
 
   coffeeDrinks: CoffeeDrink[];
+
+  @Input() coffeeDrink: CoffeeDrink;
+  @Input() newCoffeeDrink: CoffeeDrink;
 
   products: Product[];
 
@@ -30,13 +34,18 @@ export class CoffeeDrinkComponent implements OnInit {
 
   ngOnInit() {
     this.getCoffeeDrinks();
-
     this.getProducts();
+    this.coffeeDrink = new CoffeeDrink();
+    this.newCoffeeDrink = new CoffeeDrink();
   }
 
   constructor(
     private coffeeDrinkService: CoffeeDrinkService
   ) {}
+
+  setDrink(drink: CoffeeDrink) {
+    this.coffeeDrink = drink;
+  }
 
   getCoffeeDrinks(): void {
     this.coffeeDrinkService.getAllCoffeeDrinks()
