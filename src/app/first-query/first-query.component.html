@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="display-3">Перший запит</h1>
+</div>
+
+<div class="buttons-menu">
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ address }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropAddress of addresses" class="dropdown-item" (click)="address=dropAddress"> {{dropAddress}}</a>
+    </div>
+  </div>
+
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ productName }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropProduct of products" class="dropdown-item" (click)="productName=dropProduct.name"> {{dropProduct.name}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerFirsts()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerFirsts">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Назва компанії</th>
+    <th scope="col">ПІБ</th>
+    <th scope="col">Назва продукту</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerFirsts" >
+    <td >{{ answer.company }}</td>
+    <td>{{ answer.fullName }}</td>
+    <td>{{ answer.product }}</td>
+  </tr>
+  </tbody>
+</table>

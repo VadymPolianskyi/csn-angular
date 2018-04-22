@@ -24,6 +24,8 @@ import {PositionService} from './position.service';
 import { ProductComponent } from './product/product.component';
 import {ProductService} from './product.service';
 import {SalesReportService} from './sales-report.service';
+import { FirstQueryComponent } from './first-query/first-query.component';
+import {FirstQueryService} from './first-query.service';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import {SalesReportService} from './sales-report.service';
     EmployeeComponent,
     ContractComponent,
     PositionComponent,
-    ProductComponent
+    ProductComponent,
+    FirstQueryComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import {SalesReportService} from './sales-report.service';
     ContractService,
     PositionService,
     ProductService,
-    SalesReportService
+    SalesReportService,
+    FirstQueryService
   ],
   bootstrap: [AppComponent]
 })
