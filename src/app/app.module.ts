@@ -18,6 +18,7 @@ import { CoffeeHousesMainComponent } from './coffee-houses-main/coffee-houses-ma
 import { EmployeeComponent } from './employee/employee.component';
 import {EmployeeService} from './employee.service';
 import { ContractComponent } from './contract/contract.component';
+import {ContractService} from './contract.service';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ContractComponent } from './contract/contract.component';
   providers: [
     CoffeeHouseService,
     CoffeeDrinkService,
-    EmployeeService
+    EmployeeService,
+    ContractService
   ],
   bootstrap: [AppComponent]
 })

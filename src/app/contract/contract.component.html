@@ -1,0 +1,99 @@
+<div class="container">
+  <h1 class="display-3">Contract</h1>
+</div>
+
+<table class="table" *ngIf="contracts">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Contract Number</th>
+    <th scope="col">Work position</th>
+    <th scope="col">Start date</th>
+    <th scope="col">End date</th>
+    <th scope="col">Employee</th>
+    <th scope="col">Coffee house</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Vacation</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let contract of contracts" (click)="setContract(contract)" >
+    <td >{{ contract.contractNumber }}</td>
+    <td>{{ contract.workPosition }}</td>
+    <td>{{ contract.startDate }}</td>
+    <td>{{ contract.endDate }}</td>
+    <td>{{ contract.employee.fullName }}</td>
+    <td>{{ contract.coffeeHouse.address }}</td>
+    <td>{{ contract.salary }}</td>
+    <td>{{ contract.vacation }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<div>
+  <div id="create-cd-menu" class="main-component">
+    <h3>Create new contract: </h3>
+    <div class="form-group">
+      <label>Contract Number:</label>
+      <input [(ngModel)]="newContract.contractNumber" class="form-control" placeholder="Contract Number">
+
+      <label>Work position:</label>
+      <input [(ngModel)]="newContract.workPosition" class="form-control" placeholder="Work position">
+
+      <label>Start date:</label>
+      <input [(ngModel)]="newContract.startDate" class="form-control" placeholder="Start date">
+
+      <label>End date:</label>
+      <input [(ngModel)]="newContract.endDate" class="form-control" placeholder="End date">
+
+      <label>Employee:</label>
+      <input [(ngModel)]="newContract.employee" class="form-control" placeholder="Employee">
+
+      <label>Coffee house:</label>
+      <input [(ngModel)]="newContract.coffeeHouse" class="form-control" placeholder="Coffee house">
+
+      <label>Salary:</label>
+      <input [(ngModel)]="newContract.salary" class="form-control" placeholder="Salary">
+
+      <label>Vacation:</label>
+      <input [(ngModel)]="newContract.vacation" class="form-control" placeholder="Vacation">
+    </div>
+    <button (click)="create()" class="btn btn-success">Create</button>
+  </div>
+</div>
+
+
+
+
+  <div *ngIf="contract">
+    <div id="create-ch-menu" class="main-component">
+      <h3>Update contract data: </h3>
+      <div class="form-group">
+        <label>Contract Number:</label>
+        <input [(ngModel)]="contract.contractNumber" class="form-control" placeholder="Contract Number">
+
+        <label>Work position:</label>
+        <input [(ngModel)]="contract.workPosition" class="form-control" placeholder="Work position">
+
+        <label>Start date:</label>
+        <input [(ngModel)]="contract.startDate" class="form-control" placeholder="Start date">
+
+        <label>End date:</label>
+        <input [(ngModel)]="contract.endDate" class="form-control" placeholder="End date">
+
+        <label>Employee:</label>
+        <input [(ngModel)]="contract.employee.fullName" class="form-control" placeholder="Employee">
+
+        <label>Coffee house:</label>
+        <input [(ngModel)]="contract.coffeeHouse.address" class="form-control" placeholder="Coffee house">
+
+        <label>Salary:</label>
+        <input [(ngModel)]="contract.salary" class="form-control" placeholder="Salary">
+
+        <label>Vacation:</label>
+        <input [(ngModel)]="contract.vacation" class="form-control" placeholder="Vacation">
+      </div>
+      <button (click)="update()" class="btn btn-success">Update</button>
+    </div>
+</div>
