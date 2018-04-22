@@ -14,7 +14,14 @@ export class CoffeeHouseService {
 
   constructor(private http: HttpClient) { }
 
-  private coffeeHouseURL = 'http://localhost:9000/coffe-houses';
+  private coffeeHouseURL = 'http://localhost:9000/api/coffee-houses';
+
+  private configs = {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
+    }
+  }
 
 
   getCoffeeHouse(address: string): Observable<CoffeeHouse> {
@@ -27,7 +34,7 @@ export class CoffeeHouseService {
 
   getAddresses(): Observable<string[]> {
     const url = `${this.coffeeHouseURL}/addresses`;
-    return this.http.get<string[]>(url).pipe(
+    return this.http.get<string[]>(url, this.configs).pipe(
       tap(_ => console.log(`fetched coffee house addresses`)),
       catchError(this.handleError<string[]>(`getAddresses`))
     );

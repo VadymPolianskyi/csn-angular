@@ -11,7 +11,7 @@ export class CoffeeDrinkService {
 
   constructor(private http: HttpClient) { }
 
-  private coffeeDrinkURL = 'http://localhost:9000/coffee-drinks';
+  private coffeeDrinkURL = 'http://localhost:9000/api/coffee-drinks';
 
   getAllCoffeeDrinks(): Observable<CoffeeDrink[]> {
     const url = `${this.coffeeDrinkURL}/all`;
