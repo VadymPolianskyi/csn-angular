@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="display-3">Positions</h1>
+</div>
+
+<table class="table" *ngIf="positions">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Avg salary</th>
+    <th scope="col">Priority</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let position of positions" (click)="setPosition(position)" >
+    <td >{{ position.name }}</td>
+    <td>{{ position.avgSalary }}</td>
+    <td>{{ position.priority }}</td>
+    <td>{{ position.description }}</td>
+  </tr>
+  </tbody>
+</table>

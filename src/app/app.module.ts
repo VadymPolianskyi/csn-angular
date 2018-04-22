@@ -19,6 +19,8 @@ import { EmployeeComponent } from './employee/employee.component';
 import {EmployeeService} from './employee.service';
 import { ContractComponent } from './contract/contract.component';
 import {ContractService} from './contract.service';
+import { PositionComponent } from './position/position.component';
+import {PositionService} from './position.service';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import {ContractService} from './contract.service';
     SalesComponent,
     CoffeeHousesMainComponent,
     EmployeeComponent,
-    ContractComponent
+    ContractComponent,
+    PositionComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import {ContractService} from './contract.service';
     CoffeeHouseService,
     CoffeeDrinkService,
     EmployeeService,
-    ContractService
+    ContractService,
+    PositionService
   ],
   bootstrap: [AppComponent]
 })
