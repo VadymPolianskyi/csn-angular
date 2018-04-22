@@ -1,14 +1,14 @@
 <div class="container">
-  <h1 class="display-3">Coffee Drinks</h1>
+  <h1 class="display-3">Кавові напої</h1>
 </div>
 
 <table class="table" *ngIf="coffeeDrinks">
   <thead class="thead-dark">
   <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Price</th>
-    <th scope="col">Native price</th>
-    <th scope="col">Description</th>
+    <th scope="col">Назва</th>
+    <th scope="col">Ціна</th>
+    <th scope="col">Собівартість</th>
+    <th scope="col">Опис</th>
   </tr>
   </thead>
 
@@ -26,21 +26,21 @@
 <div class="form-block">
 
   <div id="create-cd-menu" class="main-component">
-    <h3>Create new coffee drink </h3>
+    <h3>Створити новий кавовий напій </h3>
     <div class="form-group">
-      <label>Name:</label>
+      <label>Назва:</label>
         <input [(ngModel)]="newCoffeeDrink.name" class="form-control" placeholder="Name">
 
-      <label>Price:</label>
+      <label>Ціна:</label>
         <input [(ngModel)]="newCoffeeDrink.price" class="form-control" placeholder="Price">
 
-      <label>Native price:</label>
+      <label>Собівартість:</label>
         <input [(ngModel)]="newCoffeeDrink.nativePrice" class="form-control" placeholder="Native price">
 
-      <label>Products:</label>
+      <label>Продукти:</label>
         <ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>
 
-      <label>Description:</label>
+      <label>Опис:</label>
         <input [(ngModel)]="newCoffeeDrink.description" class="form-control" placeholder="Description">
 
     </div>
@@ -50,22 +50,22 @@
   <!--<ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>-->
 
     <div *ngIf="coffeeDrink" id="create-ch-menu" class="main-component">
-      <h3>Update coffee drink data </h3>
+      <h3>Оновити кавовий напій</h3>
       <div class="form-group">
-        <label>Name:</label>
+        <label>Назва:</label>
           <input [(ngModel)]="coffeeDrink.name" class="form-control"  placeholder="Address">
 
-        <label>Price:</label>
+        <label>Ціна:</label>
           <input [(ngModel)]="coffeeDrink.price" class="form-control"  placeholder="Space">
 
-        <label>Native price:</label>
+        <label>Собівартість:</label>
           <input [(ngModel)]="coffeeDrink.nativePrice" class="form-control"  placeholder="Rental price">
 
-        <label>Description:</label>
+        <label>Опис:</label>
           <input [(ngModel)]="coffeeDrink.description" class="form-control"  placeholder="Mobile number">
 
       </div>
-      <button (click)="update()" class="btn btn-success">Update</button>
+      <button (click)="update()" class="btn btn-success">Оновити</button>
     </div>
 
 </div>

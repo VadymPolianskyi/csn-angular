@@ -5,12 +5,12 @@
 <table class="table" *ngIf="employees">
   <thead class="thead-dark">
   <tr>
-    <th scope="col">Full name</th>
-    <th scope="col">Birthday date</th>
-    <th scope="col">Mobile number</th>
-    <th scope="col">Address</th>
-    <th scope="col">Passport</th>
-    <th scope="col">Sex</th>
+    <th scope="col">ПІБ</th>
+    <th scope="col">Дата народження</th>
+    <th scope="col">Мобільний номер</th>
+    <th scope="col">Адреса</th>
+    <th scope="col">Серія паспорту</th>
+    <th scope="col">Стать</th>
   </tr>
   </thead>
 
@@ -29,7 +29,7 @@
 
 <div>
   <div id="create-cd-menu" class="main-component">
-    <h3>Create new employee: </h3>
+    <h3>Додати нового працівника: </h3>
     <div class="form-group">
       <label>Name:</label>
       <input [(ngModel)]="newEmployee.fullName" class="form-control" placeholder="Name">
@@ -60,7 +60,7 @@
 
   <div *ngIf="employee">
     <div id="create-ch-menu" class="main-component">
-      <h3>Update employee data: </h3>
+      <h3>Оновити працівника: </h3>
       <div>
         <label>Name:</label>
         <input [(ngModel)]="employee.fullName" class="form-control" placeholder="Name">

@@ -1,3 +1,25 @@
-<p>
-  sales works!
-</p>
+<div class="container">
+  <h1 class="display-3">Продажі</h1>
+</div>
+
+<table class="table" *ngIf="salesReports">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Назва напою</th>
+    <th scope="col">Адреса кав'ярні</th>
+    <th scope="col">Працівник</th>
+    <th scope="col">Дата продажу</th>
+    <th scope="col">Ціна з ПДВ</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let salesReport of salesReports" (click)="setSalesReport(salesReport)" >
+    <td >{{ salesReport.coffeeDrink.name }}</td>
+    <td>{{ salesReport.coffeeHouse.address }}</td>
+    <td>{{ salesReport.employee.fullName }}</td>
+    <td>{{ salesReport.saleDate }}</td>
+    <td>{{ salesReport.priceWithVat }}</td>
+  </tr>
+  </tbody>
+</table>

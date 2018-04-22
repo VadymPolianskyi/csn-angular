@@ -1,6 +1,6 @@
 <div class="main">
   <div id="coffee-houses-list" class="main-table">
-    <h2>Coffee Houses: </h2>
+    <h2>Кав'ярня: </h2>
       <div class="grid grid-pad" *ngIf="addresses">
         <a *ngFor="let address of addresses" class="col-1-4"
            routerLink="/coffee-house/{{ address }}">
@@ -12,19 +12,19 @@
   </div>
 
   <div id="create-ch-menu" class="main-block">
-    <h3>Create new coffee house: </h3>
+    <h3>Створити нову кав'ярню: </h3>
     <div class="form-group">
-      <label>Address:</label>
-        <input [(ngModel)]="coffeeHouse.address" placeholder="Address">
+      <label>Адреса:</label>
+        <input [(ngModel)]="coffeeHouse.address" placeholder="Адреса">
 
-      <label>Space:</label>
-        <input [(ngModel)]="coffeeHouse.space" placeholder="Space">
+      <label>Площа:</label>
+        <input [(ngModel)]="coffeeHouse.space" placeholder="Площа">
 
-      <label>Rental price:</label>
-        <input [(ngModel)]="coffeeHouse.rentalPrice" placeholder="Rental price">
+      <label>Ціна оренди:</label>
+        <input [(ngModel)]="coffeeHouse.rentalPrice" placeholder="Ціна оренди">
 
-      <label>Mobile number:</label>
-        <input [(ngModel)]="coffeeHouse.mobileNumber" placeholder="Mobile number">
+      <label>Мобільний номер:</label>
+        <input [(ngModel)]="coffeeHouse.mobileNumber" placeholder="Мобільний номер">
 
       <button (click)="create()" class="btn btn-success">Create</button>
     </div>

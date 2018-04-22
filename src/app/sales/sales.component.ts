@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SalesReportService} from '../sales-report.service';
+import {SalesReport} from '../sales/sales.report';
 
 @Component({
   selector: 'app-sales',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesComponent implements OnInit {
 
-  constructor() { }
+  salesReports: SalesReport[];
+
+  @Input() salesReport: SalesReport;
+  @Input() newSalesReport: SalesReport;
 
   ngOnInit() {
+    this.getSalesReports();
+    this.salesReport = new SalesReport();
+    this.newSalesReport = new SalesReport();
   }
+
+  constructor(
+    private salesReportService: SalesReportService
+  ) {}
+
+  setSalesReport(salesReport: SalesReport) {
+    this.salesReport = salesReport;
+  }
+
+  getSalesReports(): void {
+    this.salesReportService.getAllSalesReports()
+      .subscribe(salesReports => this.salesReports = salesReports);
+  }
+
 
 }

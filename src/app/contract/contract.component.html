@@ -5,14 +5,14 @@
 <table class="table" *ngIf="contracts">
   <thead class="thead-dark">
   <tr>
-    <th scope="col">Contract Number</th>
-    <th scope="col">Work position</th>
-    <th scope="col">Start date</th>
-    <th scope="col">End date</th>
-    <th scope="col">Employee</th>
-    <th scope="col">Coffee house</th>
-    <th scope="col">Salary</th>
-    <th scope="col">Vacation</th>
+    <th scope="col">Номер контракту</th>
+    <th scope="col">Посада</th>
+    <th scope="col">Дата початку</th>
+    <th scope="col">Дата закінчення</th>
+    <th scope="col">Працівник</th>
+    <th scope="col">Кав'ярня</th>
+    <th scope="col">Зарплата</th>
+    <th scope="col">Відпустка</th>
   </tr>
   </thead>
 
@@ -33,33 +33,33 @@
 
 <div>
   <div id="create-cd-menu" class="main-component">
-    <h3>Create new contract: </h3>
+    <h3>Створити новий контракт: </h3>
     <div class="form-group">
-      <label>Contract Number:</label>
-      <input [(ngModel)]="newContract.contractNumber" class="form-control" placeholder="Contract Number">
+      <label>Номер контракту:</label>
+      <input [(ngModel)]="newContract.contractNumber" class="form-control" placeholder="Номер контракту">
 
-      <label>Work position:</label>
-      <input [(ngModel)]="newContract.workPosition" class="form-control" placeholder="Work position">
+      <label>Посада:</label>
+      <input [(ngModel)]="newContract.workPosition" class="form-control" placeholder="Посада">
 
-      <label>Start date:</label>
-      <input [(ngModel)]="newContract.startDate" class="form-control" placeholder="Start date">
+      <label>Дата початку:</label>
+      <input [(ngModel)]="newContract.startDate" class="form-control" placeholder="Дата початку">
 
-      <label>End date:</label>
-      <input [(ngModel)]="newContract.endDate" class="form-control" placeholder="End date">
+      <label>Дата закінчення:</label>
+      <input [(ngModel)]="newContract.endDate" class="form-control" placeholder="Дата закінчення">
 
-      <label>Employee:</label>
-      <input [(ngModel)]="newContract.employee" class="form-control" placeholder="Employee">
+      <label>Працівник:</label>
+      <input [(ngModel)]="newContract.employee" class="form-control" placeholder="Працівник">
 
-      <label>Coffee house:</label>
-      <input [(ngModel)]="newContract.coffeeHouse" class="form-control" placeholder="Coffee house">
+      <label>Кав'ярня:</label>
+      <input [(ngModel)]="newContract.coffeeHouse" class="form-control" placeholder="Кав'ярня">
 
-      <label>Salary:</label>
-      <input [(ngModel)]="newContract.salary" class="form-control" placeholder="Salary">
+      <label>Зарплата:</label>
+      <input [(ngModel)]="newContract.salary" class="form-control" placeholder="Зарплата">
 
-      <label>Vacation:</label>
-      <input [(ngModel)]="newContract.vacation" class="form-control" placeholder="Vacation">
+      <label>Відпустка:</label>
+      <input [(ngModel)]="newContract.vacation" class="form-control" placeholder="Відпустка">
     </div>
-    <button (click)="create()" class="btn btn-success">Create</button>
+    <button (click)="create()" class="btn btn-success">Створити</button>
   </div>
 </div>
 
@@ -68,32 +68,32 @@
 
   <div *ngIf="contract">
     <div id="create-ch-menu" class="main-component">
-      <h3>Update contract data: </h3>
+      <h3>Оновити дані контракту: </h3>
       <div class="form-group">
-        <label>Contract Number:</label>
-        <input [(ngModel)]="contract.contractNumber" class="form-control" placeholder="Contract Number">
+        <label>Номер контракту:</label>
+        <input [(ngModel)]="contract.contractNumber" class="form-control" placeholder="Номер контракту">
 
-        <label>Work position:</label>
-        <input [(ngModel)]="contract.workPosition" class="form-control" placeholder="Work position">
+        <label>Посада:</label>
+        <input [(ngModel)]="contract.workPosition" class="form-control" placeholder="Посада">
 
-        <label>Start date:</label>
-        <input [(ngModel)]="contract.startDate" class="form-control" placeholder="Start date">
+        <label>Дата початку:</label>
+        <input [(ngModel)]="contract.startDate" class="form-control" placeholder="Дата початку">
 
-        <label>End date:</label>
-        <input [(ngModel)]="contract.endDate" class="form-control" placeholder="End date">
+        <label>Дата закінчення:</label>
+        <input [(ngModel)]="contract.endDate" class="form-control" placeholder="Дата закінчення">
 
-        <label>Employee:</label>
-        <input [(ngModel)]="contract.employee.fullName" class="form-control" placeholder="Employee">
+        <label>Працівник:</label>
+        <input [(ngModel)]="contract.employee.fullName" class="form-control" placeholder="Працівник">
 
-        <label>Coffee house:</label>
-        <input [(ngModel)]="contract.coffeeHouse.address" class="form-control" placeholder="Coffee house">
+        <label>Кав'ярня:</label>
+        <input [(ngModel)]="contract.coffeeHouse.address" class="form-control" placeholder="Кав'ярня">
 
-        <label>Salary:</label>
-        <input [(ngModel)]="contract.salary" class="form-control" placeholder="Salary">
+        <label>Зарплата:</label>
+        <input [(ngModel)]="contract.salary" class="form-control" placeholder="Зарплата">
 
-        <label>Vacation:</label>
-        <input [(ngModel)]="contract.vacation" class="form-control" placeholder="Vacation">
+        <label>Відпустка:</label>
+        <input [(ngModel)]="contract.vacation" class="form-control" placeholder="Відпустка">
       </div>
-      <button (click)="update()" class="btn btn-success">Update</button>
+      <button (click)="update()" class="btn btn-success">Оновити</button>
     </div>
 </div>

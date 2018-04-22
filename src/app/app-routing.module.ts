@@ -8,6 +8,7 @@ import {EmployeeComponent} from './employee/employee.component';
 import {ContractComponent} from './contract/contract.component';
 import {PositionComponent} from './position/position.component';
 import {ProductComponent} from './product/product.component';
+import {SalesComponent} from './sales/sales.component';
 
 const routes: Routes = [
   { path: 'coffee-houses', component: CoffeeHousesMainComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'contracts', component: ContractComponent },
   { path: 'positions', component: PositionComponent },
   { path: 'products', component: ProductComponent },
+  { path: 'sales', component: SalesComponent },
   { path: '', component: MainComponent },
 ];
 

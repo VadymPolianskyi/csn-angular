@@ -23,6 +23,7 @@ import { PositionComponent } from './position/position.component';
 import {PositionService} from './position.service';
 import { ProductComponent } from './product/product.component';
 import {ProductService} from './product.service';
+import {SalesReportService} from './sales-report.service';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {ProductService} from './product.service';
     EmployeeService,
     ContractService,
     PositionService,
-    ProductService
+    ProductService,
+    SalesReportService
   ],
   bootstrap: [AppComponent]
 })

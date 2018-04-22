@@ -1,31 +1,31 @@
 <div class="main-coffe-house">
   <div *ngIf="coffeeHouse">
-    <h2>Coffee house info: </h2>
-    <div><span>Address: </span>{{ coffeeHouse.address }}</div>
-    <div><span>Space: </span>{{ coffeeHouse.space }}</div>
-    <div><span>Rental price: </span>{{ coffeeHouse.rentalPrice }}</div>
-    <div><span>MobileNumber: </span>{{ coffeeHouse.mobileNumber }}</div>
+    <h2>Інформація кав'ярні: </h2>
+    <div><span>Адреса: </span>{{ coffeeHouse.address }}</div>
+    <div><span>Площа: </span>{{ coffeeHouse.space }}</div>
+    <div><span>Ціна оренди: </span>{{ coffeeHouse.rentalPrice }}</div>
+    <div><span>Мобільний номер: </span>{{ coffeeHouse.mobileNumber }}</div>
   </div>
 
-  <button (click)="goBack()">go back</button>
+  <button (click)="goBack()" class="btn btn-success">Повернутись</button>
 
   <div *ngIf="coffeeHouse">
     <div id="create-ch-menu" class="main-block">
-      <h3>Update coffee house data </h3>
+      <h3>Оновити дані кав'ярні</h3>
       <div class="form-group">
-        <label for="addressInput" class="col-2 col-form-label">Address:</label>
-        <input  [(ngModel)]="coffeeHouse.address"  value="{{coffeeHouse.address}}" placeholder="Address" class="form-control" type="text" id="addressInput">
+        <label for="addressInput" class="col-2 col-form-label">Адреса:</label>
+        <input  [(ngModel)]="coffeeHouse.address"  value="{{coffeeHouse.address}}" placeholder="Адреса" class="form-control" type="text" id="addressInput">
 
-        <label for="spaceInput" class="col-2 col-form-label">Space:</label>
-        <input  [(ngModel)]="coffeeHouse.space" placeholder="Space" class="form-control" type="text" id="spaceInput">
+        <label for="spaceInput" class="col-2 col-form-label">Площа:</label>
+        <input  [(ngModel)]="coffeeHouse.space" placeholder="Площа" class="form-control" type="text" id="spaceInput">
 
-        <label for="rentalPriceInput" class="col-2 col-form-label">Rental price:</label>
-        <input  [(ngModel)]="coffeeHouse.rentalPrice" placeholder="Rental price" class="form-control" type="text" id="rentalPriceInput">
+        <label for="rentalPriceInput" class="col-2 col-form-label">Ціна оренди:</label>
+        <input  [(ngModel)]="coffeeHouse.rentalPrice" placeholder="Ціна оренди" class="form-control" type="text" id="rentalPriceInput">
 
-        <label for="mobileNumberInput" class="col-2 col-form-label">Mobile number:</label>
-        <input  [(ngModel)]="coffeeHouse.mobileNumber" placeholder="Mobile number" class="form-control" type="text" id="mobileNumberInput">
+        <label for="mobileNumberInput" class="col-2 col-form-label">Мобільний номер:</label>
+        <input  [(ngModel)]="coffeeHouse.mobileNumber" placeholder="Мобільний номер" class="form-control" type="text" id="mobileNumberInput">
 
-        <button (click)="update()" class="btn btn-success">Update</button>
+        <button (click)="update()" class="btn btn-success">Оновити</button>
       </div>
     </div>
   </div>
