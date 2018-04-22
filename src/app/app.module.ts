@@ -16,6 +16,7 @@ import {NgSelectizeModule} from 'ng-selectize';
 import { SalesComponent } from './sales/sales.component';
 import { CoffeeHousesMainComponent } from './coffee-houses-main/coffee-houses-main.component';
 import { EmployeeComponent } from './employee/employee.component';
+import {EmployeeService} from './employee.service';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { EmployeeComponent } from './employee/employee.component';
   ],
   providers: [
     CoffeeHouseService,
-    CoffeeDrinkService
+    CoffeeDrinkService,
+    EmployeeService
   ],
   bootstrap: [AppComponent]
 })

@@ -6,6 +6,7 @@ export class CoffeeDrink {
   description: string;
 
 }
+
 export class Product {
   name: string;
   price: number;
