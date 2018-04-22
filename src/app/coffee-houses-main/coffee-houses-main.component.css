@@ -60,10 +60,27 @@ h4 {
   }
 }
 
-.main {
-  display: block;
+.main-block {
+  width: 45%;
+  margin: 50px auto 0 auto;
+  border: 1px solid #45a541;
+  padding: 20px;
+  border-radius: 17px;
 }
 
-.main-component {
-  display: flow-root;
+.main-block h3{
+  text-align: center;
+}
+
+.btn-success{
+  width: 100%;
+  margin: 20px 0;
+}
+
+.form-group{
+  display: grid;
+}
+
+.main-block{
+  display: table;
 }

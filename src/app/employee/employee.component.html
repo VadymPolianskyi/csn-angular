@@ -1,0 +1,86 @@
+<div class="container">
+  <h1 class="display-3">Employee</h1>
+</div>
+
+<table class="table" *ngIf="employees">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Full name</th>
+    <th scope="col">Birthday date</th>
+    <th scope="col">Mobile number</th>
+    <th scope="col">Address</th>
+    <th scope="col">Passport</th>
+    <th scope="col">Sex</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let employee of employees" (click)="setEmployee(employee)" >
+    <td >{{ employee.fullName }}</td>
+    <td>{{ employee.birthdayDate }}</td>
+    <td>{{ employee.mobileNumber }}</td>
+    <td>{{ employee.address }}</td>
+    <td>{{ employee.passport }}</td>
+    <td>{{ employee.sex }}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<div>
+  <div id="create-cd-menu" class="main-component">
+    <h3>Create new employee: </h3>
+    <div class="form-group">
+      <label>Name:</label>
+      <input [(ngModel)]="newEmployee.fullName" class="form-control" placeholder="Name">
+
+      <label>Birthday Date:</label>
+      <input [(ngModel)]="newEmployee.birthdayDate" class="form-control" placeholder="Birthday Date">
+
+      <label>Mobile number:</label>
+      <input [(ngModel)]="newEmployee.mobileNumber" class="form-control" placeholder="Mobile number">
+
+      <label>Address:</label>
+      <input [(ngModel)]="newEmployee.address" class="form-control" placeholder="Address">
+
+      <label>Passport:</label>
+      <input [(ngModel)]="newEmployee.passport" class="form-control" placeholder="Passport">
+
+      <label>Sex:</label>
+      <input [(ngModel)]="newEmployee.sex" class="form-control" placeholder="Sex">
+
+    </div>
+    <button (click)="create()">Create</button>
+  </div>
+</div>
+
+
+<div class="example">
+
+
+  <div *ngIf="employee">
+    <div id="create-ch-menu" class="main-component">
+      <h3>Update employee data: </h3>
+      <div>
+        <label>Name:</label>
+        <input [(ngModel)]="employee.fullName" class="form-control" placeholder="Name">
+
+        <label>Birthday Date:</label>
+        <input [(ngModel)]="employee.birthdayDate" class="form-control" placeholder="Birthday Date">
+
+        <label>Mobile number:</label>
+        <input [(ngModel)]="employee.mobileNumber" class="form-control" placeholder="Mobile number">
+
+        <label>Address:</label>
+        <input [(ngModel)]="employee.address" class="form-control" placeholder="Address">
+
+        <label>Passport:</label>
+        <input [(ngModel)]="employee.passport" class="form-control" placeholder="Passport">
+
+        <label>Sex:</label>
+        <input [(ngModel)]="employee.sex" class="form-control" placeholder="Sex">
+      </div>
+      <button (click)="update()">Update</button>
+    </div>
+  </div>
+</div>

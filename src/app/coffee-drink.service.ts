@@ -22,7 +22,7 @@ export class CoffeeDrinkService {
   }
 
   getAllProducts(): Observable<Product[]> {
-    const url = 'http://localhost:9000/products/all';
+    const url = 'http://localhost:9000/api/products/all';
     return this.http.get<Product[]>(url).pipe(
       tap(_ => console.log(`fetched all products`)),
       catchError(this.handleError<Product[]>(`getAllProducts`))

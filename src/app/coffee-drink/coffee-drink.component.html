@@ -1,64 +1,71 @@
-<div *ngIf="coffeeDrinks">
-
-  <a *ngFor="let coffeeDrink of coffeeDrinks" class="col-1-4" (click)="setDrink(coffeeDrink)">
-        <div class="module">
-          <h3>{{ coffeeDrink.name }}</h3>
-          <div><span>Price: </span>{{ coffeeDrink.price }}</div>
-          <div class="small-text"><span>Description: </span>{{ coffeeDrink.description }}</div>
-        </div>
-
-  </a>
+<div class="container">
+  <h1 class="display-3">Coffee Drinks</h1>
 </div>
 
+<table class="table" *ngIf="coffeeDrinks">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Native price</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
 
-<div>
+  <tbody>
+    <tr *ngFor="let coffeeDrink of coffeeDrinks" (click)="setDrink(coffeeDrink)" >
+        <td >{{ coffeeDrink.name }}</td>
+        <td>{{ coffeeDrink.price }}</td>
+        <td>{{ coffeeDrink.nativePrice }}</td>
+        <td>{{ coffeeDrink.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="form-block">
+
   <div id="create-cd-menu" class="main-component">
-    <h3>Create new coffee drink: </h3>
-    <div>
-      <label>Name:
-        <input [(ngModel)]="newCoffeeDrink.name" placeholder="Name">
-      </label>
-      <label>Price:
-        <input [(ngModel)]="newCoffeeDrink.price" placeholder="Price">
-      </label>
-      <label>Native price:
-        <input [(ngModel)]="newCoffeeDrink.nativePrice" placeholder="Native price">
-      </label>
-      <label>Products:
+    <h3>Create new coffee drink </h3>
+    <div class="form-group">
+      <label>Name:</label>
+        <input [(ngModel)]="newCoffeeDrink.name" class="form-control" placeholder="Name">
+
+      <label>Price:</label>
+        <input [(ngModel)]="newCoffeeDrink.price" class="form-control" placeholder="Price">
+
+      <label>Native price:</label>
+        <input [(ngModel)]="newCoffeeDrink.nativePrice" class="form-control" placeholder="Native price">
+
+      <label>Products:</label>
         <ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>
-      </label>
-      <label>Description:
-        <input [(ngModel)]="newCoffeeDrink.description" placeholder="Description">
-      </label>
+
+      <label>Description:</label>
+        <input [(ngModel)]="newCoffeeDrink.description" class="form-control" placeholder="Description">
+
     </div>
-    <button (click)="create()">Create</button>
+    <button (click)="create()"  class="btn btn-success">Create</button>
   </div>
-</div>
-
-
-<div class="example">
-
 
   <!--<ng-selectize [config]="config" [options]="options" [placeholder]="placeholder" [(ngModel)]="values" (ngModelChange)="onValueChange($event)"></ng-selectize>-->
 
-  <div *ngIf="coffeeDrink">
-    <div id="create-ch-menu" class="main-component">
-      <h3>Update coffee drink data: </h3>
-      <div>
-        <label>Address:
-          <input [(ngModel)]="coffeeDrink.name" placeholder="Address">
-        </label>
-        <label>Space:
-          <input [(ngModel)]="coffeeDrink.price" placeholder="Space">
-        </label>
-        <label>Rental price:
-          <input [(ngModel)]="coffeeDrink.nativePrice" placeholder="Rental price">
-        </label>
-        <label>Mobile number:
-          <input [(ngModel)]="coffeeDrink.description" placeholder="Mobile number">
-        </label>
+    <div *ngIf="coffeeDrink" id="create-ch-menu" class="main-component">
+      <h3>Update coffee drink data </h3>
+      <div class="form-group">
+        <label>Name:</label>
+          <input [(ngModel)]="coffeeDrink.name" class="form-control"  placeholder="Address">
+
+        <label>Price:</label>
+          <input [(ngModel)]="coffeeDrink.price" class="form-control"  placeholder="Space">
+
+        <label>Native price:</label>
+          <input [(ngModel)]="coffeeDrink.nativePrice" class="form-control"  placeholder="Rental price">
+
+        <label>Description:</label>
+          <input [(ngModel)]="coffeeDrink.description" class="form-control"  placeholder="Mobile number">
+
       </div>
-      <button (click)="update()">Update</button>
+      <button (click)="update()" class="btn btn-success">Update</button>
     </div>
-  </div>
+
 </div>
