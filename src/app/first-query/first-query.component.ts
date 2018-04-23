@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {AnswerFirst} from '../first-query/answer.first';
 import {FirstQueryService} from '../first-query.service';
 import {CoffeeHouseService} from '../coffee-house.service';
-import {CoffeeHouse} from '../coffee-house/coffeeHouse';
 import {Product} from '../coffee-drink/coffeeDrink';
 import {CoffeeDrinkService} from '../coffee-drink.service';
 

@@ -10,6 +10,7 @@ import {PositionComponent} from './position/position.component';
 import {ProductComponent} from './product/product.component';
 import {SalesComponent} from './sales/sales.component';
 import {FirstQueryComponent} from './first-query/first-query.component';
+import {SecondQueryComponent} from './second-query/second-query.component';
 
 const routes: Routes = [
   { path: 'coffee-houses', component: CoffeeHousesMainComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'products', component: ProductComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'first', component: FirstQueryComponent },
+  { path: 'second', component: SecondQueryComponent },
   { path: '', component: MainComponent },
 ];
 
