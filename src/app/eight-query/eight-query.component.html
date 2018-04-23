@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="display-3">Восьмий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Від :
+      <input type="date" [(ngModel)]="birthdayDateS"/>
+    </label>
+  </div>
+
+  <div class="dropdown col-1-4">
+  <label> До :
+      <input type="date" [(ngModel)]="birthdayDateE"/>
+    </label>
+  </div>
+
+  <div class="dropdown col-1-4">
+  <label> Дата закінчення контракту :
+      <input type="date" [(ngModel)]="endDate"/>
+    </label>
+  </div>
+
+  <button (click)="getAnswerEights()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerEights">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ПІБ працівника</th>
+    <th scope="col">Дата народження</th>
+    <th scope="col">Мобільний номер</th>
+    <th scope="col">Стать</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerEights" >
+    <td >{{ answer.fullName }}</td>
+    <td>{{ answer.birthdayDate }}</td>
+    <td>{{ answer.mobileNumber }}</td>
+    <td>{{ answer.sex }}</td>
+  </tr>
+  </tbody>
+</table>

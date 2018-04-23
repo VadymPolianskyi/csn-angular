@@ -24,7 +24,6 @@ export class FifthQueryComponent implements OnInit {
   ) {}
 
   getAnswerFifths(): void {
-    console.log(this.birthdayDate);
     this.answerFifthService.getAllAnswerFifths((new Date(this.birthdayDate).getTime() / 1000), +this.salary)
       .subscribe(answerFifths => this.answerFifths = answerFifths);
   }
