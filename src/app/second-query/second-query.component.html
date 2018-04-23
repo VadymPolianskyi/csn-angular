@@ -1,0 +1,53 @@
+<div class="container">
+  <h1 class="display-3">Другий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Оберіть дату початку роботи працівника:
+      <input type="date" [(ngModel)]="startDate"/>
+    </label>
+  </div>
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ address }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropAddress of addresses" class="dropdown-item" (click)="address=dropAddress"> {{dropAddress}}</a>
+    </div>
+  </div>
+
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ positionName }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropPosition of positions" class="dropdown-item" (click)="positionName=dropPosition.name"> {{dropPosition.name}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerSeconds()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerSeconds">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ПІБ</th>
+    <th scope="col">Дата народження</th>
+    <th scope="col">Моб номер</th>
+    <th scope="col">Стать</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerSeconds" >
+    <td >{{ answer.fullName }}</td>
+    <td>{{ answer.birthdayDate }}</td>
+    <td>{{ answer.mobileNumber }}</td>
+    <td>{{ answer.sex }}</td>
+  </tr>
+  </tbody>
+</table>
