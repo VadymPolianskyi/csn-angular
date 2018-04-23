@@ -31,6 +31,8 @@ import {SecondQueryService} from './second-query.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ThirdQueryComponent } from './third-query/third-query.component';
 import {ThirdQueryService} from './third-query.service';
+import { FourthQueryComponent } from './fourth-query/fourth-query.component';
+import {FourthQueryService} from './fourth-query.service';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import {ThirdQueryService} from './third-query.service';
     ProductComponent,
     FirstQueryComponent,
     SecondQueryComponent,
-    ThirdQueryComponent
+    ThirdQueryComponent,
+    FourthQueryComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import {ThirdQueryService} from './third-query.service';
     SalesReportService,
     FirstQueryService,
     SecondQueryService,
-    ThirdQueryService
+    ThirdQueryService,
+    FourthQueryService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,44 @@
+<div class="container">
+  <h1 class="display-3">Четвертий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Оберіть початок дат продаж:
+      <input type="date" [(ngModel)]="saleDate"/>
+    </label>
+  </div>
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ coffeeDrink }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropCoffeeDrink of coffeeDrinks" class="dropdown-item" (click)="coffeeDrink=dropCoffeeDrink.name"> {{dropCoffeeDrink.name}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerFourths()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerFourths">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Адреса</th>
+    <th scope="col">Площа</th>
+    <th scope="col">Мобільний номер</th>
+    <th scope="col">Число продаж</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerFourths" >
+    <td >{{ answer.address }}</td>
+    <td>{{ answer.space }}</td>
+    <td>{{ answer.mobileNumber }}</td>
+    <td>{{ answer.sales }}</td>
+  </tr>
+  </tbody>
+</table>
