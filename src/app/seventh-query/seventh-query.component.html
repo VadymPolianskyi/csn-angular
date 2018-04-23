@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 class="display-3">Сьомий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="col-1-4">
+    <label> Впишіть середню зарплату:
+      <input type="text" [(ngModel)]="avgSalary"/>
+    </label>
+  </div>
+
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ address }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropAddress of addresses" class="dropdown-item" (click)="address=dropAddress"> {{dropAddress}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerSevenths()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerSevenths">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Посада</th>
+    <th scope="col">Середня зарплата</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerSevenths" >
+    <td >{{ answer.name }}</td>
+    <td>{{ answer.avgSalary }}</td>
+  </tr>
+  </tbody>
+</table>
