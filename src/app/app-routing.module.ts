@@ -11,6 +11,7 @@ import {ProductComponent} from './product/product.component';
 import {SalesComponent} from './sales/sales.component';
 import {FirstQueryComponent} from './first-query/first-query.component';
 import {SecondQueryComponent} from './second-query/second-query.component';
+import {ThirdQueryComponent} from './third-query/third-query.component';
 
 const routes: Routes = [
   { path: 'coffee-houses', component: CoffeeHousesMainComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'sales', component: SalesComponent },
   { path: 'first', component: FirstQueryComponent },
   { path: 'second', component: SecondQueryComponent },
+  { path: 'third', component: ThirdQueryComponent },
   { path: '', component: MainComponent },
 ];
 

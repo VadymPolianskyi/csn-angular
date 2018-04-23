@@ -1,0 +1,44 @@
+<div class="container">
+  <h1 class="display-3">Третій запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Оберіть початок дат продаж:
+      <input type="date" [(ngModel)]="saleDate"/>
+    </label>
+  </div>
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ address }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropAddress of addresses" class="dropdown-item" (click)="address=dropAddress"> {{dropAddress}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerThirds()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerThirds">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Напій</th>
+    <th scope="col">Працівник</th>
+    <th scope="col">Ціна</th>
+    <th scope="col">Опис напою</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerThirds" >
+    <td >{{ answer.coffeeDrink }}</td>
+    <td>{{ answer.employee }}</td>
+    <td>{{ answer.price }}</td>
+    <td>{{ answer.description }}</td>
+  </tr>
+  </tbody>
+</table>
