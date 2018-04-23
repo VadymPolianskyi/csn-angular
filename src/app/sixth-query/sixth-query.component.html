@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="display-3">Шостий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Оберіть початок дат продаж:
+      <input type="date" [(ngModel)]="saleDate"/>
+    </label>
+  </div>
+
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ employee }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropEmployee of employees" class="dropdown-item" (click)="employee=dropEmployee.fullName"> {{dropEmployee.fullName}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerSixths()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerSixths">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Напій</th>
+    <th scope="col">Дата продажу</th>
+    <th scope="col">Ціна</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerSixths" >
+    <td >{{ answer.coffeeDrink }}</td>
+    <td>{{ answer.saleDate }}</td>
+    <td>{{ answer.priceWithVat }}</td>
+  </tr>
+  </tbody>
+</table>

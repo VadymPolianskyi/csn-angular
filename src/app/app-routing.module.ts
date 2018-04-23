@@ -14,6 +14,7 @@ import {SecondQueryComponent} from './second-query/second-query.component';
 import {ThirdQueryComponent} from './third-query/third-query.component';
 import {FourthQueryComponent} from './fourth-query/fourth-query.component';
 import {FifthQueryComponent} from './fifth-query/fifth-query.component';
+import {SixthQueryComponent} from './sixth-query/sixth-query.component';
 
 const routes: Routes = [
   { path: 'coffee-houses', component: CoffeeHousesMainComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'third', component: ThirdQueryComponent },
   { path: 'fourth', component: FourthQueryComponent },
   { path: 'fifth', component: FifthQueryComponent },
+  { path: 'sixth', component: SixthQueryComponent },
   { path: '', component: MainComponent },
 ];
 
