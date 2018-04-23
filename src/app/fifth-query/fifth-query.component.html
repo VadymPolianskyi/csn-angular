@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="display-3">П'ятий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Впишіть день народження:
+      <input type="date" [(ngModel)]="birthdayDate"/>
+    </label>
+  </div>
+
+  <div class="col-1-4">
+    <label> Впишіть зарплату:
+      <input type="text" [(ngModel)]="salary"/>
+    </label>
+  </div>
+
+  <button (click)="getAnswerFifths()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerFifths">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Номер контракту</th>
+    <th scope="col">Працівник</th>
+    <th scope="col">Посада</th>
+    <th scope="col">Дата початку роботи</th>
+    <th scope="col">Години на тиждень</th>
+    <th scope="col">Зарплата</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerFifths" >
+    <td >{{ answer.contractNumber }}</td>
+    <td>{{ answer.employee }}</td>
+    <td>{{ answer.position }}</td>
+    <td>{{ answer.startDate }}</td>
+    <td>{{ answer.hoursPerWeek }}</td>
+    <td>{{ answer.salary }}</td>
+  </tr>
+  </tbody>
+</table>
