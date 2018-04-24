@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="display-3">Десятий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Оберіть початок дат продаж:
+      <input type="date" [(ngModel)]="fromDate"/>
+    </label>
+  </div>
+
+  <div class="dropdown col-1-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ address }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a *ngFor="let dropAddress of addresses" class="dropdown-item" (click)="address=dropAddress"> {{dropAddress}}</a>
+    </div>
+  </div>
+
+  <button (click)="getAnswerTenths()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerTenths">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ПІБ працівника</th>
+    <th scope="col">Дата народження</th>
+    <th scope="col">Продажі</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerTenths" >
+    <td >{{ answer.fullName }}</td>
+    <td>{{ answer.birthdayDate }}</td>
+    <td>{{ answer.sales }}</td>
+  </tr>
+  </tbody>
+</table>

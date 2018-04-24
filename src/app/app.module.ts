@@ -43,6 +43,8 @@ import { EightQueryComponent } from './eight-query/eight-query.component';
 import {EightQueryService} from './eight-query.service';
 import { NinthQueryComponent } from './ninth-query/ninth-query.component';
 import {NinthQueryService} from './ninth-query.service';
+import { TenthQueryComponent } from './tenth-query/tenth-query.component';
+import {TenthQueryService} from './tenth-query.service';
 
 
 @NgModule({
@@ -66,7 +68,8 @@ import {NinthQueryService} from './ninth-query.service';
     SixthQueryComponent,
     SeventhQueryComponent,
     EightQueryComponent,
-    NinthQueryComponent
+    NinthQueryComponent,
+    TenthQueryComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ import {NinthQueryService} from './ninth-query.service';
     SixthQueryService,
     SeventhQueryService,
     EightQueryService,
-    NinthQueryService
+    NinthQueryService,
+    TenthQueryService
   ],
   bootstrap: [AppComponent]
 })

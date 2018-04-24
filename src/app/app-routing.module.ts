@@ -19,6 +19,7 @@ import {SeventhQueryComponent} from './seventh-query/seventh-query.component';
 import {EightQueryService} from './eight-query.service';
 import {EightQueryComponent} from './eight-query/eight-query.component';
 import {NinthQueryComponent} from './ninth-query/ninth-query.component';
+import {TenthQueryComponent} from './tenth-query/tenth-query.component';
 
 const routes: Routes = [
   { path: 'coffee-houses', component: CoffeeHousesMainComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'seventh', component: SeventhQueryComponent },
   { path: 'eighth', component: EightQueryComponent },
   { path: 'ninth', component: NinthQueryComponent },
+  { path: 'tenth', component: TenthQueryComponent },
   { path: '', component: MainComponent },
 ];
 

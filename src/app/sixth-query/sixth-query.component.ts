@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AnswerSixth} from '../sixth-query/answer.sixth';
+import {AnswerSixth} from './answer.sixth';
 import {SixthQueryService} from '../sixth-query.service';
-import {CoffeeHouseService} from '../coffee-house.service';
 import {EmployeeService} from '../employee.service';
 import {Employee} from '../employee/employee';
 
