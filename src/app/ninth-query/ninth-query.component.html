@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="display-3">Дев'ятий запит</h1>
+</div>
+
+
+
+<div class="buttons-menu">
+
+  <div class="dropdown col-1-4">
+    <label> Дата початку продаж :
+      <input type="date" [(ngModel)]="fromDate"/>
+    </label>
+  </div>
+
+  <button (click)="getAnswerNinths()" class="btn btn-success">Пошук</button>
+</div>
+
+<table class="table" *ngIf="answerNinths">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Адреса кав'ярні</th>
+    <th scope="col">Мобільний номен</th>
+    <th scope="col">Площа</th>
+    <th scope="col">Продажі</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let answer of answerNinths" >
+    <td >{{ answer.address }}</td>
+    <td>{{ answer.mobileNumber }}</td>
+    <td>{{ answer.space }}</td>
+    <td>{{ answer.sales }}</td>
+  </tr>
+  </tbody>
+</table>
